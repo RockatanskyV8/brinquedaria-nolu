@@ -4,14 +4,16 @@
   "description": "Teste proposto pela empresa Nolu Tecnologia",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/server.js"
   },
   "author": "Lucas Santos",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
-    },
+    "express": "^4.17.1",
+    "mariadb": "^2.1.4"
+  },
   "devDependencies": {
     "nodemon": "^2.0.1"
   }
