@@ -25,7 +25,7 @@ exports.rule = async(req, res, next) => {
     try {
     	conn = await pool.getConnection();
     	const rows = await conn.query( repos[ path[2] ][ path[3] ], getReqInfo(req) );
-      res.status(200).send(rows);
+      res.status(200).send(path[2]);
     } catch (err) {
   	   throw err;
     } finally {
