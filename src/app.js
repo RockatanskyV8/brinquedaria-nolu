@@ -16,16 +16,3 @@ app.use(bodyParser.urlencoded({
 app.use('/nolu', route);
 
 module.exports = app;
-
-// async function asyncFunction() {
-//   let conn;
-//   try {
-//   	conn = await pool.getConnection();
-//   	const rows = await conn.query("SELECT * FROM brinquedaria_nolu.brinquedos");
-//   	console.log(rows[0]);
-//   } catch (err) {
-// 	   throw err;
-//   } finally {
-// 	   if (conn) return conn.end();
-//   }
-// }
