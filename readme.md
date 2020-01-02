@@ -7,6 +7,10 @@ O banco de dados usado foi o Mariadb, por ser um substituto opensource do MySQL.
 Para iniciar a aplicação:
 
 ```
+npm install
+```
+
+```
 npm start
 ```
 
