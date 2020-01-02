@@ -19,16 +19,16 @@ function getReqInfo(req){
 }
 
 exports.rule = async(req, res, next) => {
-    let path = (req.originalUrl).split("/");
-    let conn;
+  let path = (req.originalUrl).split("/");
+  let conn;
 
-    try {
-    	conn = await pool.getConnection();
-    	const rows = await conn.query( repos[ path[2] ][ path[3] ], getReqInfo(req) );
-      res.status(200).send(path[2]);
-    } catch (err) {
-  	   throw err;
-    } finally {
-  	   if (conn) return conn.end();
-    }
+  try {
+    conn = await pool.getConnection();
+    const rows = await conn.query( repos[ path[2] ][ path[3] ], getReqInfo(req) );
+    res.status(200).send(rows)
+  } catch (err) {
+    throw err;
+  } finally {
+    if (conn) return conn.end();
+  }
 }
