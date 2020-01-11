@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Brinquedos</title>
+  </head>
+  <body>
+    <div class="">
+      <h2>Brinquedos</h2>
+      <br /><br /><br />
+      <% if (linhas.length > 0) { %>
+  		  <div class="row">
+  			 <% for(var i = 0; i < linhas.length; i++ ) {%>
+  				<div class="col-md-12 jumbotron">
+  				  <h4><%= linhas[i].name %></h4>
+  				  <p><%= linhas[i].value %></p>
+  				</div>
+  			 <% } %>
+    </div>
+  </body>
+</html>

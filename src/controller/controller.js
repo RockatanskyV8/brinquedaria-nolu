@@ -24,8 +24,16 @@ exports.rule = async(req, res, next) => {
 
   try {
     conn = await pool.getConnection();
-    const rows = await conn.query( repos[ path[2] ][ path[3] ], getReqInfo(req) );
-    res.status(200).send(rows)
+    res.render(
+      path[2],
+      {
+        linhas :  await conn.query( repos[ path[2] ][ path[3] ], getReqInfo(req) ),
+        async : true
+      });
+    // res.status(200).send(rows)
+    // console.log(rows)
+    // await res.render(path[2], {linhas : rows, async: true})
+    console.log(path)
   } catch (err) {
     throw err;
   } finally {
